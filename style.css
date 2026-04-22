@@ -1,0 +1,110 @@
+/* плавное изменение цифр */
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+}
+.numbers {
+    position: relative;
+    width: 150px;
+    height: 100px;
+    margin: 0;
+}
+.digit {
+    position: absolute;
+    font-size: 50px;
+    width: 50px;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.pos-1 { left: 0; }
+.pos-2 { left: 50px; }
+.pos-3 { left: 100px; }
+.old {
+    animation: up 0.8s forwards;
+}
+
+.new {
+    animation: down 0.8s forwards;
+}
+
+@keyframes up {
+    to {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+
+@keyframes down {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(-50%);
+        opacity: 1;
+    }
+}
+/* летающие цифры */
+.fly{
+   position: absolute;
+   top: -75px;
+   left: 50px;
+    opacity: 1;
+    transition: all 2s;
+}
+.positive{
+    color: green;
+}
+.negative{
+    color: red;
+}
+/* летающие цифры */
+.btn-snow{
+    background-color: #436FE0;
+    color: #fff;
+    border: none;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+}
+.snowflake {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    z-index: 1000;
+}
+.btn-snow.pressed {
+    background-color: #3458b4;
+}
+/* кнопки */
+.btns{
+    margin-bottom: 20px;
+}
+.btn-minus{
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: rgb(238, 134, 134);
+    border: 2px solid rgb(207, 42, 42);
+    color: rgb(143, 2, 2) ;
+}
+.btn-plus{
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: rgb(144, 223, 150);
+    border: 2px solid rgb(34, 148, 11);
+    color: rgb(34, 148, 11);
+}
+.btn-next{
+    width: 120px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: rgb(223, 213, 130);
+    border: 2px solid rgb(189, 156, 11);
+    color: rgb(163, 135, 8);
+}
