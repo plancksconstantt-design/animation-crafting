@@ -112,24 +112,19 @@ function flyNumber(num){
     }
 
 //снег
-$(".btn-snow").click(function(){
-
-         const snowflake = $('<img class="snowflake" src="snow.png">');
-         const leftPosition = Math.random() * (window.innerWidth - 30);
-
-         // Устанавливаем начальную позицию
-            snowflake.css('left', leftPosition)
-            snowflake.css('top',0)
-
-         $('body').append(snowflake);
-          snowflake.animate({
-            'top': window.innerHeight,
-            'opacity': 0
-        }, 3000, function() {
-            $(this).remove();
-        });
-
-    })
+$(".btn-snow").click(function() {
+    const snowflake = $('<img class="snowflake" src="snow.png">');
+    const leftPosition = Math.random() * (window.innerWidth - 30);
+    snowflake.css('left', leftPosition);
+    snowflake.css('top', 0);
+    $('body').append(snowflake);
+    snowflake.animate({
+        'top': window.innerHeight,
+        'opacity': 0
+    }, 5000, function() {
+        $(this).remove();
+    });
+});
     
 
 $(".btn-snow")
