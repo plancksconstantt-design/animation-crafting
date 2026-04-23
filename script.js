@@ -135,5 +135,9 @@ $(".btn-snow")
         $(this).removeClass("pressed");
     });
 
+$(".flip-card").click(function() {
+    $(this).toggleClass("flipped");
+});
+
 })
 
